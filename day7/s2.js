@@ -9,4 +9,12 @@
  * Signal事件 -- 当进程接收到信号时就触发。
  */
 
+process.on("exit", (code) => {
+  // 一下代码永远不会执行
+  setTimeout(() => {
+    console.log("该代码不会执行");
+  }, 0);
+  console.log('退出码为： ',code)
+});
 
+console.log("程序执行结束")
